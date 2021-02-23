@@ -7,6 +7,7 @@ with open("configuration.json", "r") as config:
 	data = json.load(config)
 	token = data["token"]
 	prefix = data["prefix"]
+	welcome_chn_id = data["welcome_channel"]
 
 
 class Greetings(commands.Cog):
@@ -37,15 +38,20 @@ if __name__ == '__main__':
 
 # @commands.Cog.listener()
 # async def on_member_join(self, member):
-@commands.Cog.listener()
-async def on_message(self, message):
-	if not(message.startswith("!mzk")):
-		return
-	message_cut = message[4:]
-	usr_cmd = message_cut.lower()
+# @commands.Cog.listener()
+# async def on_message(self, message):
+# 	if not(message.startswith("!mzk")):
+# 		return
+# 	message_cut = message[4:]
+# 	usr_cmd = message_cut.lower()
 
-	if usr_cmd == 'konnichiwa':
-		message.channel.send('Doumo')
+# 	if usr_cmd == 'konnichiwa':
+# 		message.channel.send('Doumo')
+
+# @commands.Cog.listener()
+# async def on_member_join(self, member):
+# 	print("Someone new joined! member.name")
+# 	bot.channel.
 
 @bot.event
 async def on_ready():
